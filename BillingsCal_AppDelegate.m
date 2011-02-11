@@ -73,7 +73,7 @@
     
     NSURL *url = [NSURL fileURLWithPath: [applicationSupportDirectory stringByAppendingPathComponent: @"storedata"]];
     persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel: mom];
-    if (![persistentStoreCoordinator addPersistentStoreWithType:NSXMLStoreType 
+    if (![persistentStoreCoordinator addPersistentStoreWithType:NSInMemoryStoreType 
                                                 configuration:nil 
                                                 URL:url 
                                                 options:nil 

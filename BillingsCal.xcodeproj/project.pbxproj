@@ -17,6 +17,7 @@
 		7926D83C13053D8500E4C08C /* ClientMO.m in Sources */ = {isa = PBXBuildFile; fileRef = 7926D83B13053D8500E4C08C /* ClientMO.m */; };
 		7926D83F13053D8500E4C08C /* EntryMO.m in Sources */ = {isa = PBXBuildFile; fileRef = 7926D83E13053D8500E4C08C /* EntryMO.m */; };
 		7926D84213053D8600E4C08C /* ProjectMO.m in Sources */ = {isa = PBXBuildFile; fileRef = 7926D84113053D8600E4C08C /* ProjectMO.m */; };
+		7926D84513053D8600E4C08C /* SlipMO.m in Sources */ = {isa = PBXBuildFile; fileRef = 7926D84413053D8600E4C08C /* SlipMO.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -246,6 +247,7 @@
 				7926D83C13053D8500E4C08C /* ClientMO.m in Sources */,
 				7926D83F13053D8500E4C08C /* EntryMO.m in Sources */,
 				7926D84213053D8600E4C08C /* ProjectMO.m in Sources */,
+				7926D84513053D8600E4C08C /* SlipMO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
