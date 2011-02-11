@@ -1,28 +1,24 @@
-//
-//  BillingsCal_AppDelegate.h
-//  BillingsCal
-//
-//  Created by wolf on 2/11/11.
-//  Copyright Red Shed Software Company 2011 . All rights reserved.
-//
-
 #import <Cocoa/Cocoa.h>
+#import "FMDatabase.h"
 
-@interface BillingsCal_AppDelegate : NSObject 
-{
-    NSWindow *window;
-    
-    NSPersistentStoreCoordinator *persistentStoreCoordinator;
-    NSManagedObjectModel *managedObjectModel;
-    NSManagedObjectContext *managedObjectContext;
+
+@interface BillingsCal_AppDelegate : NSObject {
+#ifndef NOIVARS
+  @protected
+    NSWindow                     *window;
+    NSDatePicker                 *datePicker;
+    NSTextView                   *outputView;
+    NSManagedObjectContext       *moc;
+    FMDatabase                   *db;
+#endif
 }
 
-@property (nonatomic, retain) IBOutlet NSWindow *window;
+@property(assign) IBOutlet NSWindow                     *window;
+@property(assign) IBOutlet NSDatePicker                 *datePicker;
+@property(assign) IBOutlet NSTextView                   *outputView;
+@property(retain)          NSManagedObjectContext       *moc;
+@property(retain)          FMDatabase                   *db;
 
-@property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-@property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
-@property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
-
-- (IBAction)saveAction:sender;
+- (IBAction)updateDate:(NSDatePicker*)sender_;
 
 @end
