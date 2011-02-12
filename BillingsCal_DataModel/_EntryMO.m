@@ -29,26 +29,26 @@
 
 
 
-@dynamic slipFK;
+@dynamic endInSecondsSince1970;
 
 
 
-- (int)slipFKValue {
-	NSNumber *result = [self slipFK];
-	return [result intValue];
+- (double)endInSecondsSince1970Value {
+	NSNumber *result = [self endInSecondsSince1970];
+	return [result doubleValue];
 }
 
-- (void)setSlipFKValue:(int)value_ {
-	[self setSlipFK:[NSNumber numberWithInt:value_]];
+- (void)setEndInSecondsSince1970Value:(double)value_ {
+	[self setEndInSecondsSince1970:[NSNumber numberWithDouble:value_]];
 }
 
-- (int)primitiveSlipFKValue {
-	NSNumber *result = [self primitiveSlipFK];
-	return [result intValue];
+- (double)primitiveEndInSecondsSince1970Value {
+	NSNumber *result = [self primitiveEndInSecondsSince1970];
+	return [result doubleValue];
 }
 
-- (void)setPrimitiveSlipFKValue:(int)value_ {
-	[self setPrimitiveSlipFK:[NSNumber numberWithInt:value_]];
+- (void)setPrimitiveEndInSecondsSince1970Value:(double)value_ {
+	[self setPrimitiveEndInSecondsSince1970:[NSNumber numberWithDouble:value_]];
 }
 
 
@@ -75,32 +75,6 @@
 
 - (void)setPrimitiveStartInSecondsSince1970Value:(double)value_ {
 	[self setPrimitiveStartInSecondsSince1970:[NSNumber numberWithDouble:value_]];
-}
-
-
-
-
-
-@dynamic endInSecondsSince1970;
-
-
-
-- (double)endInSecondsSince1970Value {
-	NSNumber *result = [self endInSecondsSince1970];
-	return [result doubleValue];
-}
-
-- (void)setEndInSecondsSince1970Value:(double)value_ {
-	[self setEndInSecondsSince1970:[NSNumber numberWithDouble:value_]];
-}
-
-- (double)primitiveEndInSecondsSince1970Value {
-	NSNumber *result = [self primitiveEndInSecondsSince1970];
-	return [result doubleValue];
-}
-
-- (void)setPrimitiveEndInSecondsSince1970Value:(double)value_ {
-	[self setPrimitiveEndInSecondsSince1970:[NSNumber numberWithDouble:value_]];
 }
 
 

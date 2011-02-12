@@ -2,6 +2,8 @@
 
 @implementation EntryMO
 
-// Custom logic goes here.
+- (double)duration {
+    return self.endInSecondsSince1970Value - self.startInSecondsSince1970Value;
+}
 
 @end

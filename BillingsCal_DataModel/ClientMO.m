@@ -2,6 +2,8 @@
 
 @implementation ClientMO
 
-// Custom logic goes here.
+- (double)duration {
+    return [[self.projects valueForKeyPath:@"@sum.duration"] doubleValue];
+}
 
 @end

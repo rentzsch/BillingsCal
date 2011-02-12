@@ -2,6 +2,8 @@
 
 @implementation ProjectMO
 
-// Custom logic goes here.
+- (double)duration {
+    return [[self.slips valueForKeyPath:@"@sum.duration"] doubleValue];
+}
 
 @end

@@ -9,7 +9,6 @@
 
 
 
-
 @interface EntryMOID : NSManagedObjectID {}
 @end
 
@@ -21,13 +20,13 @@
 
 
 
-@property (nonatomic, retain) NSNumber *slipFK;
+@property (nonatomic, retain) NSNumber *endInSecondsSince1970;
 
-@property int slipFKValue;
-- (int)slipFKValue;
-- (void)setSlipFKValue:(int)value_;
+@property double endInSecondsSince1970Value;
+- (double)endInSecondsSince1970Value;
+- (void)setEndInSecondsSince1970Value:(double)value_;
 
-//- (BOOL)validateSlipFK:(id*)value_ error:(NSError**)error_;
+//- (BOOL)validateEndInSecondsSince1970:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -38,16 +37,6 @@
 - (void)setStartInSecondsSince1970Value:(double)value_;
 
 //- (BOOL)validateStartInSecondsSince1970:(id*)value_ error:(NSError**)error_;
-
-
-
-@property (nonatomic, retain) NSNumber *endInSecondsSince1970;
-
-@property double endInSecondsSince1970Value;
-- (double)endInSecondsSince1970Value;
-- (void)setEndInSecondsSince1970Value:(double)value_;
-
-//- (BOOL)validateEndInSecondsSince1970:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -66,11 +55,11 @@
 
 @interface _EntryMO (CoreDataGeneratedPrimitiveAccessors)
 
-- (NSNumber*)primitiveSlipFK;
-- (void)setPrimitiveSlipFK:(NSNumber*)value;
+- (NSNumber*)primitiveEndInSecondsSince1970;
+- (void)setPrimitiveEndInSecondsSince1970:(NSNumber*)value;
 
-- (int)primitiveSlipFKValue;
-- (void)setPrimitiveSlipFKValue:(int)value_;
+- (double)primitiveEndInSecondsSince1970Value;
+- (void)setPrimitiveEndInSecondsSince1970Value:(double)value_;
 
 
 - (NSNumber*)primitiveStartInSecondsSince1970;
@@ -78,13 +67,6 @@
 
 - (double)primitiveStartInSecondsSince1970Value;
 - (void)setPrimitiveStartInSecondsSince1970Value:(double)value_;
-
-
-- (NSNumber*)primitiveEndInSecondsSince1970;
-- (void)setPrimitiveEndInSecondsSince1970:(NSNumber*)value;
-
-- (double)primitiveEndInSecondsSince1970Value;
-- (void)setPrimitiveEndInSecondsSince1970Value:(double)value_;
 
 
 

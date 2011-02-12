@@ -21,13 +21,13 @@
 
 
 
-@property (nonatomic, retain) NSNumber *slipPK;
+@property (nonatomic, retain) NSNumber *slipID;
 
-@property int slipPKValue;
-- (int)slipPKValue;
-- (void)setSlipPKValue:(int)value_;
+@property int slipIDValue;
+- (int)slipIDValue;
+- (void)setSlipIDValue:(int)value_;
 
-//- (BOOL)validateSlipPK:(id*)value_ error:(NSError**)error_;
+//- (BOOL)validateSlipID:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -49,6 +49,11 @@
 
 
 
++ (id)fetchOneWithSlipID:(NSManagedObjectContext*)moc_ slipID:(NSNumber*)slipID_ ;
++ (id)fetchOneWithSlipID:(NSManagedObjectContext*)moc_ slipID:(NSNumber*)slipID_ error:(NSError**)error_;
+
+
+
 @end
 
 @interface _SlipMO (CoreDataGeneratedAccessors)
@@ -62,11 +67,11 @@
 
 @interface _SlipMO (CoreDataGeneratedPrimitiveAccessors)
 
-- (NSNumber*)primitiveSlipPK;
-- (void)setPrimitiveSlipPK:(NSNumber*)value;
+- (NSNumber*)primitiveSlipID;
+- (void)setPrimitiveSlipID:(NSNumber*)value;
 
-- (int)primitiveSlipPKValue;
-- (void)setPrimitiveSlipPKValue:(int)value_;
+- (int)primitiveSlipIDValue;
+- (void)setPrimitiveSlipIDValue:(int)value_;
 
 
 - (NSString*)primitiveName;

@@ -36,33 +36,33 @@
 
 
 
-@dynamic projectPK;
+@dynamic projectID;
 
 
 
-- (int)projectPKValue {
-	NSNumber *result = [self projectPK];
+- (int)projectIDValue {
+	NSNumber *result = [self projectID];
 	return [result intValue];
 }
 
-- (void)setProjectPKValue:(int)value_ {
-	[self setProjectPK:[NSNumber numberWithInt:value_]];
+- (void)setProjectIDValue:(int)value_ {
+	[self setProjectID:[NSNumber numberWithInt:value_]];
 }
 
-- (int)primitiveProjectPKValue {
-	NSNumber *result = [self primitiveProjectPK];
+- (int)primitiveProjectIDValue {
+	NSNumber *result = [self primitiveProjectID];
 	return [result intValue];
 }
 
-- (void)setPrimitiveProjectPKValue:(int)value_ {
-	[self setPrimitiveProjectPK:[NSNumber numberWithInt:value_]];
+- (void)setPrimitiveProjectIDValue:(int)value_ {
+	[self setPrimitiveProjectID:[NSNumber numberWithInt:value_]];
 }
 
 
 
 
 
-@dynamic newRelationship;
+@dynamic client;
 
 	
 
@@ -79,6 +79,59 @@
 
 
 
+
+
+
++ (id)fetchOneWithProjectID:(NSManagedObjectContext*)moc_ projectID:(NSNumber*)projectID_ {
+	NSError *error = nil;
+	id result = [self fetchOneWithProjectID:moc_ projectID:projectID_ error:&error];
+	if (error) {
+#if TARGET_OS_IPHONE
+		NSLog(@"error: %@", error);
+#else
+		[NSApp presentError:error];
+#endif
+	}
+	return result;
+}
++ (id)fetchOneWithProjectID:(NSManagedObjectContext*)moc_ projectID:(NSNumber*)projectID_ error:(NSError**)error_ {
+	NSParameterAssert(moc_);
+	NSError *error = nil;
+	
+	NSManagedObjectModel *model = [[moc_ persistentStoreCoordinator] managedObjectModel];
+	
+	NSDictionary *substitutionVariables = [NSDictionary dictionaryWithObjectsAndKeys:
+														
+														projectID_, @"projectID",
+														
+														nil];
+	
+	NSFetchRequest *fetchRequest = [model fetchRequestFromTemplateWithName:@"oneWithProjectID"
+													 substitutionVariables:substitutionVariables];
+	NSAssert(fetchRequest, @"Can't find fetch request named \"oneWithProjectID\".");
+	
+	id result = nil;
+	NSArray *results = [moc_ executeFetchRequest:fetchRequest error:&error];
+	
+	if (!error) {
+		switch ([results count]) {
+			case 0:
+				//	Nothing found matching the fetch request. That's cool, though: we'll just return nil.
+				break;
+			case 1:
+				result = [results objectAtIndex:0];
+				break;
+			default:
+				NSLog(@"WARN fetch request oneWithProjectID: 0 or 1 objects expected, %u found (substitutionVariables:%@, results:%@)",
+					[results count],
+					substitutionVariables,
+					results);
+		}
+	}
+	
+	if (error_) *error_ = error;
+	return result;
+}
 
 
 @end

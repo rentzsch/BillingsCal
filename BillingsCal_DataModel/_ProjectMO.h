@@ -27,25 +27,30 @@
 
 
 
-@property (nonatomic, retain) NSNumber *projectPK;
+@property (nonatomic, retain) NSNumber *projectID;
 
-@property int projectPKValue;
-- (int)projectPKValue;
-- (void)setProjectPKValue:(int)value_;
+@property int projectIDValue;
+- (int)projectIDValue;
+- (void)setProjectIDValue:(int)value_;
 
-//- (BOOL)validateProjectPK:(id*)value_ error:(NSError**)error_;
-
-
+//- (BOOL)validateProjectID:(id*)value_ error:(NSError**)error_;
 
 
-@property (nonatomic, retain) ClientMO* newRelationship;
-//- (BOOL)validateNewRelationship:(id*)value_ error:(NSError**)error_;
+
+
+@property (nonatomic, retain) ClientMO* client;
+//- (BOOL)validateClient:(id*)value_ error:(NSError**)error_;
 
 
 
 @property (nonatomic, retain) NSSet* slips;
 - (NSMutableSet*)slipsSet;
 
+
+
+
++ (id)fetchOneWithProjectID:(NSManagedObjectContext*)moc_ projectID:(NSNumber*)projectID_ ;
++ (id)fetchOneWithProjectID:(NSManagedObjectContext*)moc_ projectID:(NSNumber*)projectID_ error:(NSError**)error_;
 
 
 
@@ -66,17 +71,17 @@
 - (void)setPrimitiveName:(NSString*)value;
 
 
-- (NSNumber*)primitiveProjectPK;
-- (void)setPrimitiveProjectPK:(NSNumber*)value;
+- (NSNumber*)primitiveProjectID;
+- (void)setPrimitiveProjectID:(NSNumber*)value;
 
-- (int)primitiveProjectPKValue;
-- (void)setPrimitiveProjectPKValue:(int)value_;
-
-
+- (int)primitiveProjectIDValue;
+- (void)setPrimitiveProjectIDValue:(int)value_;
 
 
-- (ClientMO*)primitiveNewRelationship;
-- (void)setPrimitiveNewRelationship:(ClientMO*)value;
+
+
+- (ClientMO*)primitiveClient;
+- (void)setPrimitiveClient:(ClientMO*)value;
 
 
 

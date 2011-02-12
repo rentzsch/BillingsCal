@@ -2,6 +2,8 @@
 
 @implementation SlipMO
 
-// Custom logic goes here.
+- (double)duration {
+    return [[self.entries valueForKeyPath:@"@sum.duration"] doubleValue];
+}
 
 @end

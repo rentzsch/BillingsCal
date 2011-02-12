@@ -20,13 +20,13 @@
 
 
 
-@property (nonatomic, retain) NSNumber *clientPK;
+@property (nonatomic, retain) NSNumber *clientID;
 
-@property int clientPKValue;
-- (int)clientPKValue;
-- (void)setClientPKValue:(int)value_;
+@property int clientIDValue;
+- (int)clientIDValue;
+- (void)setClientIDValue:(int)value_;
 
-//- (BOOL)validateClientPK:(id*)value_ error:(NSError**)error_;
+//- (BOOL)validateClientID:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -43,6 +43,11 @@
 
 
 
++ (id)fetchOneWithClientID:(NSManagedObjectContext*)moc_ clientID:(NSNumber*)clientID_ ;
++ (id)fetchOneWithClientID:(NSManagedObjectContext*)moc_ clientID:(NSNumber*)clientID_ error:(NSError**)error_;
+
+
+
 @end
 
 @interface _ClientMO (CoreDataGeneratedAccessors)
@@ -56,11 +61,11 @@
 
 @interface _ClientMO (CoreDataGeneratedPrimitiveAccessors)
 
-- (NSNumber*)primitiveClientPK;
-- (void)setPrimitiveClientPK:(NSNumber*)value;
+- (NSNumber*)primitiveClientID;
+- (void)setPrimitiveClientID:(NSNumber*)value;
 
-- (int)primitiveClientPKValue;
-- (void)setPrimitiveClientPKValue:(int)value_;
+- (int)primitiveClientIDValue;
+- (void)setPrimitiveClientIDValue:(int)value_;
 
 
 - (NSString*)primitiveName;
